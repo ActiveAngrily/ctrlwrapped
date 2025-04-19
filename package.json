@@ -4,8 +4,7 @@
     "description": "Your internet journey, wrapped up in one scroll",
     "main": "index.js",
     "scripts": {
-      "start": "http-server public src -p 8080",
-      
+      "start": "http-server --host localhost .",
       "build": "webpack --config webpack.config.js",
       "dev": "webpack --watch --config webpack.config.js"
     },
