@@ -116,7 +116,17 @@ body {
 /* User dropdown for logged in state */
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.dropdown .nav-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .dropdown-content {
@@ -125,11 +135,15 @@ body {
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
     border-radius: 10px;
     top: 100%;
     right: 0;
     margin-top: 10px;
+}
+
+.dropdown-content.show {
+    display: block;
 }
 
 .dropdown-content a {
@@ -138,15 +152,12 @@ body {
     text-decoration: none;
     display: block;
     font-size: 1.2rem;
+    text-align: left;
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
     border-radius: 10px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* Logged in button style */

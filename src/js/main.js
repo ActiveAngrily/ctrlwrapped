@@ -51,36 +51,51 @@ function updateUIForLoggedInUser(user) {
     // Change login button to username display
     const loginButton = document.querySelector('.login-button');
     if (loginButton) {
+        // Update the login button to show the username
         loginButton.textContent = user.name;
         loginButton.classList.add('logged-in');
         
-        // Add a dropdown menu for user options
+        // Create dropdown container
+        const dropdown = document.createElement('div');
+        dropdown.className = 'dropdown';
+        
+        // Create dropdown content
         const dropdownContent = document.createElement('div');
         dropdownContent.className = 'dropdown-content';
         
-        const profileLink = document.createElement('a');
-        profileLink.href = '#';
-        profileLink.textContent = 'Profile';
-        
+        // Only create logout link (no profile button)
         const logoutLink = document.createElement('a');
         logoutLink.href = '#';
         logoutLink.textContent = 'Logout';
         logoutLink.addEventListener('click', handleLogout);
         
-        dropdownContent.appendChild(profileLink);
         dropdownContent.appendChild(logoutLink);
         
-        // Create dropdown container
-        const dropdown = document.createElement('div');
-        dropdown.className = 'dropdown';
-        dropdown.appendChild(loginButton.cloneNode(true));
+        // Insert the dropdown in the DOM
+        const parent = loginButton.parentNode;
+        parent.insertBefore(dropdown, loginButton);
+        
+        // Move the login button inside the dropdown
+        dropdown.appendChild(loginButton);
+        
+        // Add the dropdown content
         dropdown.appendChild(dropdownContent);
         
-        // Replace login button with dropdown
-        loginButton.parentNode.replaceChild(dropdown, loginButton);
+        // Add click event to toggle dropdown
+        loginButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownContent.classList.toggle('show');
+        });
+        
+        // Close the dropdown if clicked outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdownContent.classList.remove('show');
+            }
+        });
     }
 }
-
 /**
  * Update UI for logged out users
  */

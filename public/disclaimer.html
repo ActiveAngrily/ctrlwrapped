@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Disclaimer for Ctrl PLUS Wrapped">
+    <title>Disclaimer - Ctrl PLUS Wrapped</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <link rel="stylesheet" href="../src/css/disclaimer.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home button in top left -->
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i> home
+        </a>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="disclaimer-container">
+                <div class="disclaimer-title">
+                    <span>Ctrl</span>
+                    <span class="plus">PLUS</span>
+                    <span>Wrapped</span>
+                    <span class="disclaimer-subtitle">Disclaimer & Terms</span>
+                </div>
+                
+                <div class="disclaimer-card">
+                    <h2>Legal Disclaimer & Data Usage Terms</h2>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Age Requirement</h3>
+                        <p>You must be at least 16 years of age to use Ctrl PLUS Wrapped. By accessing or using this service, you confirm that you are at least 16 years old. If you are under 16 years of age, you are not permitted to use this application.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Data Collection and Processing</h3>
+                        <p>By using Ctrl PLUS Wrapped, you explicitly consent to the collection, processing, storage, and analysis of your browsing data that you provide through file uploads. This includes but is not limited to:</p>
+                        <ul>
+                            <li>URLs of websites you have visited</li>
+                            <li>Search queries you have submitted</li>
+                            <li>Timestamps of your browsing activities</li>
+                            <li>Session durations and frequency of site visits</li>
+                            <li>Browser interaction patterns and engagement metrics</li>
+                        </ul>
+                        <p>The uploaded data may be analyzed using machine learning algorithms, statistical methods, and other analytical tools to generate insights and visualizations about your browsing habits.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Data Retention and Access</h3>
+                        <p>Your uploaded browsing history and derived data will be stored on our servers and will be accessible to authorized administrators of the platform. Your data may be retained indefinitely or until you explicitly request its deletion.</p>
+                        <p>Administrators may access your data for the following purposes:</p>
+                        <ul>
+                            <li>Troubleshooting technical issues</li>
+                            <li>Improving the accuracy and functionality of the service</li>
+                            <li>Conducting aggregate, anonymized analysis for research purposes</li>
+                            <li>Ensuring compliance with our terms of service and applicable laws</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Data Security</h3>
+                        <p>While we implement reasonable security measures to protect your data, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee the absolute security of your data. By using this service, you acknowledge and accept these inherent risks.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Third-Party Access</h3>
+                        <p>We may share anonymized, aggregated data derived from user uploads with third parties for research, analytical, or business purposes. However, we will not sell or lease your individual browsing data to third parties without your explicit consent.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Technical Limitations</h3>
+                        <p>The accuracy and completeness of the insights provided depend on the quality and completeness of the data you upload. The service may not capture the entirety of your online activity if your browsing history is incomplete or if you use multiple browsers or devices.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Disclaimer of Liability</h3>
+                        <p>Ctrl PLUS Wrapped is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that the service will be error-free, uninterrupted, or that all defects will be corrected. We are not liable for any damages arising from your use of or inability to use this service.</p>
+                    </div>
+                    
+                    <div class="disclaimer-section">
+                        <h3>Changes to Terms</h3>
+                        <p>We reserve the right to modify these terms at any time. Continued use of Ctrl PLUS Wrapped after changes to these terms constitutes acceptance of the modified terms.</p>
+                    </div>
+                    
+                    <div class="disclaimer-acceptance">
+                        <p>By using Ctrl PLUS Wrapped, you acknowledge that you have read, understood, and agree to all these terms and conditions.</p>
+                    </div>
+                    
+                    <div class="back-button-container">
+                        <a href="javascript:history.back()" class="back-button">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                Designed and Developed by Anant
+                <div class="divider"></div>
+                <div class="social-icons">
+                    <a href="https://www.github.com/ActiveAngrily" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github social-icon github-icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anant-jamuar-bb4340299/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin social-icon linkedin-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply content protection
+            const applyContentProtection = () => {
+                // Prevent right-click context menu
+                document.addEventListener('contextmenu', event => event.preventDefault());
+                
+                // Prevent image drag and save
+                document.querySelectorAll('img').forEach(img => {
+                    img.addEventListener('dragstart', event => event.preventDefault());
+                    img.setAttribute('draggable', 'false');
+                });
+            };
+            
+            applyContentProtection();
+        });
+    </script>
+</body>
+</html>

@@ -32,7 +32,6 @@ async function checkAuthStatus() {
         console.error('Error checking auth status:', error);
     }
 }
-
 /**
  * Setup login form submission
  */
@@ -44,6 +43,7 @@ function setupLoginForm() {
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
             
             // Basic validation
             if (!email || !password) {
@@ -59,6 +59,15 @@ function setupLoginForm() {
             try {
                 // Attempt login
                 await authService.login(email, password);
+                
+                // Store remember me preference if checked
+                if (rememberMe) {
+                    localStorage.setItem('rememberUser', 'true');
+                    localStorage.setItem('userEmail', email);
+                } else {
+                    localStorage.removeItem('rememberUser');
+                    localStorage.removeItem('userEmail');
+                }
                 
                 // Redirect on success
                 window.location.href = 'index.html';
@@ -77,9 +86,17 @@ function setupLoginForm() {
                 loginBtn.disabled = false;
             }
         });
+        
+        // Check for remembered user
+        const rememberedUser = localStorage.getItem('rememberUser');
+        const userEmail = localStorage.getItem('userEmail');
+        
+        if (rememberedUser && userEmail) {
+            document.getElementById('email').value = userEmail;
+            document.getElementById('remember').checked = true;
+        }
     }
 }
-
 /**
  * Show error message
  * @param {string} message - Error message to display
