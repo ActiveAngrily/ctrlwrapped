@@ -1,9 +1,9 @@
 import { Client, Account, ID } from 'appwrite';
 
-// Initialize Appwrite client
+// Initialize Appwrite client with Appwrite Cloud
 const client = new Client()
-    .setEndpoint('http://localhost/v1')
-    .setProject('your-project-id'); // Replace with your project ID after setup
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('your-project-id'); // Replace with your Appwrite Cloud project ID
 
 // Initialize Appwrite account
 const account = new Account(client);
