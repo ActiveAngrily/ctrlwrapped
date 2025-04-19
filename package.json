@@ -1,0 +1,27 @@
+{
+    "name": "ctrl-plus-wrapped",
+    "version": "1.0.0",
+    "description": "Your internet journey, wrapped up in one scroll",
+    "main": "index.js",
+    "scripts": {
+      "start": "http-server public -p 8080",
+      "build": "webpack --config webpack.config.js",
+      "dev": "webpack --watch --config webpack.config.js"
+    },
+    "author": "Anant",
+    "license": "MIT",
+    "dependencies": {
+      "appwrite": "^11.0.0"
+    },
+    "devDependencies": {
+      "copy-webpack-plugin": "^11.0.0",
+      "css-loader": "^6.8.1",
+      "file-loader": "^6.2.0",
+      "html-webpack-plugin": "^5.5.3",
+      "http-server": "^14.1.1",
+      "mini-css-extract-plugin": "^2.7.6",
+      "style-loader": "^3.3.3",
+      "webpack": "^5.88.2",
+      "webpack-cli": "^5.1.4"
+    }
+  }
