@@ -202,13 +202,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Remember me and forgot password row */
-.remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
-}
 /* Remember me styles */
 .remember-me {
     margin-top: 10px;
@@ -231,18 +224,6 @@ body {
 .remember label {
     font-size: 0.95rem;
     color: #143d60;
-}
-
-.forgot-link {
-    color: #eb5b00;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    user-select: auto;
-}
-
-.forgot-link:hover {
-    text-decoration: underline;
 }
 
 /* Login button */

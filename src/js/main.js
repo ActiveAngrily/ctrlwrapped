@@ -63,7 +63,7 @@ function updateUIForLoggedInUser(user) {
         const dropdownContent = document.createElement('div');
         dropdownContent.className = 'dropdown-content';
         
-        // Only create logout link (no profile button)
+        // ONLY create logout link - NO profile button
         const logoutLink = document.createElement('a');
         logoutLink.href = '#';
         logoutLink.textContent = 'Logout';
@@ -96,6 +96,7 @@ function updateUIForLoggedInUser(user) {
         });
     }
 }
+
 /**
  * Update UI for logged out users
  */
@@ -124,7 +125,7 @@ function setupNavigation(user) {
     const instructionsButton = document.querySelector('.instructions-button');
     if (instructionsButton) {
         instructionsButton.addEventListener('click', function() {
-            // Show instructions modal or navigate to instructions page
+            // Redirect to instructions page
             alert('Instructions page coming soon!');
         });
     }
@@ -133,8 +134,8 @@ function setupNavigation(user) {
     const disclaimerButton = document.querySelector('.disclaimer-button');
     if (disclaimerButton) {
         disclaimerButton.addEventListener('click', function() {
-            // Show disclaimer modal or navigate to disclaimer page
-            alert('Disclaimer page coming soon!');
+            // Redirect to disclaimer page
+            window.location.href = 'disclaimer.html';
         });
     }
 }
