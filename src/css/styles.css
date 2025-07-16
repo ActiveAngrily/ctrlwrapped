@@ -10,9 +10,9 @@
 
 /* Font declarations */
 @font-face {
-    font-family: 'BodyFont';
-    src: url('../assets/fonts/CameraObscuraDEMO.woff2') format('woff2'),
-         url('../assets/fonts/CameraObscuraDEMO.woff') format('woff');
+    font-family: 'BodyFont';    
+    src: url('../assets/fonts/Nougat-ExtraBlack.woff2') format('woff2'),
+        url('../assets/fonts/Nougat-ExtraBlack.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
