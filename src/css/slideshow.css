@@ -1,0 +1,209 @@
+/* Base styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Font declarations */
+@font-face {
+    font-family: 'BodyFont';
+    src: url('../assets/fonts/Nougat-ExtraBlack.woff2') format('woff2'),
+         url('../assets/fonts/Nougat-ExtraBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TitleFont';
+    src: url('../assets/fonts/Storybook.woff2') format('woff2'),
+         url('../assets/fonts/Storybook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #ddeb9d;
+    font-family: 'BodyFont', Arial, sans-serif;
+    position: relative;
+}
+
+/* Main container */
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Home button styles */
+.home-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: #a0c878;
+    border-radius: 30px;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    font-family: 'BodyFont', Arial, sans-serif;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    user-select: auto;
+    border: 2px solid transparent;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    border-color: #000000;
+}
+
+.home-button i {
+    font-size: 1.2rem;
+}
+
+/* Content area */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 1200px;
+}
+
+.results-title {
+    font-family: 'TitleFont', Arial, sans-serif;
+    color: #143d60;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.results-title span {
+    font-size: min(5vw, 5rem);
+}
+
+.results-title span.plus {
+    font-size: min(4vw, 4rem);
+}
+
+/* Insights Grid */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.insight-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 3px solid black;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.insight-card h3 {
+    font-family: 'BodyFont', Arial, sans-serif;
+    color: #eb5b00;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.insight-card .value {
+    font-family: 'TitleFont', Arial, sans-serif;
+    color: #143d60;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.insight-card .description {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.insight-card ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.insight-card li {
+    font-size: 1.2rem;
+    color: #143d60;
+    margin-bottom: 8px;
+    font-family: 'BodyFont', sans-serif;
+}
+
+/* Footer styles */
+.footer {
+    height: 80px;
+    background-color: #e9ffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    font-size: min(1.5vw, 1.3rem);
+    color: #143d60;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.divider {
+    margin: 0 15px;
+    height: 20px;
+    width: 2px;
+    background-color: #143d60;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+.social-icon {
+    font-size: 1.6rem;
+    color: #143d60;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
