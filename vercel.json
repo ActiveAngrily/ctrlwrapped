@@ -1,7 +1,22 @@
 {
-  "functions": {
-    "api/*.js": {
-      "memory": 1024
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
-  }
+  ],
+  "rewrites": [
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/register", "destination": "/register.html" },
+    { "source": "/disclaimer", "destination": "/disclaimer.html" },
+    { "source": "/slideshow", "destination": "/slideshow.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
