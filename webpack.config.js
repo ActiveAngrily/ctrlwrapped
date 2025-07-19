@@ -5,19 +5,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  // Define entry points for each page
   entry: {
     main: './src/js/main.js',
     login: './src/js/login.js',
     register: './src/js/register.js',
     slideshow: './src/js/slideshow.js',
-    auth: './src/js/auth.js',
-    // Note: appwrite.js is loaded via CDN in the HTML
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
-    clean: true, // Clean the output directory before each build
+    publicPath: '/', // This is the crucial addition
+    clean: true,
   },
   module: {
     rules: [
@@ -42,12 +40,9 @@ module.exports = {
     ],
   },
   plugins: [
-    // Extract CSS into separate files
     new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css'
     }),
-    
-    // Create an HTML file for each page
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: 'index.html',
@@ -71,19 +66,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/disclaimer.html',
       filename: 'disclaimer.html',
-      chunks: [], // No specific JS needed for this page
+      chunks: [],
     }),
-
-    // Copy static assets that are not directly imported
     new CopyWebpackPlugin({
         patterns: [
-            { from: 'src/assets', to: 'assets' }
+            // Correctly copies images to be used by the HTML <img> tag
+            { from: 'src/assets/images', to: 'assets/images' }
         ]
     })
   ],
-  devServer: {
-    static: './dist',
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
