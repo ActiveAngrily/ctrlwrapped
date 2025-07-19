@@ -3,8 +3,8 @@ const { Client, Account, ID } = Appwrite;
 
 // Initialize Appwrite client with Appwrite Cloud
 const client = new Client()
-    .setEndpoint('https://fra.cloud.appwrite.io/v1')
-    .setProject('68038b6a001ffa473b65'); // Your project ID
+    .setEndpoint(process.env.APPWRITE_ENDPOINT) // Your custom endpoint
+    .setProject(process.env.APPWRITE_PROJECT_ID); // Your project ID
 
 // Initialize Appwrite account
 const account = new Account(client);
