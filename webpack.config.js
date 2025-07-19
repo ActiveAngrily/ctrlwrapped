@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
+  // Define an entry point for each page's main JavaScript file
   entry: {
     main: './src/js/main.js',
     login: './src/js/login.js',
@@ -14,8 +15,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
-    publicPath: '/', // This is the crucial addition
-    clean: true,
+    // This is the crucial addition: It makes all asset paths absolute.
+    publicPath: '/',
+    clean: true, // Clean the output directory before each build
   },
   module: {
     rules: [
@@ -40,13 +42,16 @@ module.exports = {
     ],
   },
   plugins: [
+    // Extract CSS into separate files
     new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css'
     }),
+    
+    // Create an HTML file for each page, injecting the correct JS bundle
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: 'index.html',
-      chunks: ['main'],
+      chunks: ['main'], // Only include the 'main' javascript bundle
     }),
     new HtmlWebpackPlugin({
       template: './public/login.html',
@@ -66,12 +71,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/disclaimer.html',
       filename: 'disclaimer.html',
-      chunks: [],
+      chunks: [], // No specific JS needed for this page
     }),
+
+    // Copy static assets that are referenced directly in HTML
     new CopyWebpackPlugin({
         patterns: [
-            // Correctly copies images to be used by the HTML <img> tag
-            { from: 'src/assets/images', to: 'assets/images' }
+            { from: 'src/assets', to: 'assets' }
         ]
     })
   ],
